@@ -1,0 +1,43 @@
+name: test_location
+description: A new Flutter project.
+publish_to: 'none'
+version: 0.1.0
+
+environment:
+  sdk: '>=3.1.3 <4.0.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+    
+  connectivity_plus: ^5.0.2
+  provider: ^6.1.1
+  google_maps_flutter: ^2.5.3
+  geolocator: ^11.0.0
+  permission_handler: ^11.0.0
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^2.0.0
+
+flutter:
+  uses-material-design: true
+
+  assets:
+      - assets/icons/PhoneIcon.png
+      - assets/icons/applications.png
+      - assets/icons/home.png
+      - assets/icons/user.png
+      - assets/icons/noWifi.png
+      - assets/images/hero.png
+      - assets/images/noLocation.png
+      - map_theme/dark_map_theme.json
+
+  fonts:
+    - family: RFDewi
+      fonts:
+        - asset: assets/fonts/RFDewi-Regular.ttf
+    - family: SF
+      fonts:
+        - asset: assets/fonts/SF-Pro-Display-Regular.otf
