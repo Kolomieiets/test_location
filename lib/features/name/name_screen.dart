@@ -31,6 +31,8 @@ class _NameScreenState extends State<NameScreen> {
 
   @override
   Widget build(BuildContext context) {
+    final LocationScreenProvider provider =
+        Provider.of<LocationScreenProvider>(context, listen: false);
     return Scaffold(
       resizeToAvoidBottomInset: true,
       backgroundColor: AppColors.main,
@@ -58,9 +60,9 @@ class _NameScreenState extends State<NameScreen> {
             style: AppTextStyles.button,
           ),
           onTap: () async {
-            await Provider.of<LocationScreenProvider>(context, listen: false)
+            await provider
                 .checkConnection();
-            await Provider.of<LocationScreenProvider>(context, listen: false)
+            await provider
                 .getGeolocation();
 
             Navigator.pushReplacement(

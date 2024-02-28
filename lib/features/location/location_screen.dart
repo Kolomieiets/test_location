@@ -30,6 +30,7 @@ class _LocationScreenState extends State<LocationScreen> {
             color: AppColors.white,
             fontFamily: 'SF',
             fontSize: 15,
+            fontWeight: FontWeight.w500
           ),
         ),
         actions: [

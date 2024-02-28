@@ -4,24 +4,21 @@ import 'package:test_location/features/location/provider/location_screen_provide
 import 'package:test_location/resources/style/app_colors.dart';
 import 'package:test_location/resources/style/app_text_styles.dart';
 
-class NoLocationCard extends StatefulWidget {
+class NoLocationCard extends StatelessWidget {
   final VoidCallback refresh;
   const NoLocationCard({required this.refresh, super.key});
 
   @override
-  State<NoLocationCard> createState() => _NoLocationCardState();
-}
-
-class _NoLocationCardState extends State<NoLocationCard> {
-  @override
   Widget build(BuildContext context) {
+    final LocationScreenProvider provider =
+        Provider.of<LocationScreenProvider>(context, listen: false);
     return Padding(
       padding: const EdgeInsets.symmetric(
         horizontal: 22.0,
         vertical: 25.0,
       ),
       child: SizedBox(
-        height: 304,
+        height: 304.0,
         width: double.infinity,
         child: Stack(alignment: Alignment.center, children: [
           Image.asset('assets/images/noLocation.png'),
@@ -55,13 +52,11 @@ class _NoLocationCardState extends State<NoLocationCard> {
                             listen: false)
                         .isPermissionOk();
                     if (permitted) {
-                      Provider.of<LocationScreenProvider>(context,
-                              listen: false)
+                      provider
                           .isAllowed = true;
-                      await Provider.of<LocationScreenProvider>(context,
-                              listen: false)
+                      await provider
                           .getGeolocation();
-                      widget.refresh();
+                      refresh();
                     }
                   },
                   child: const Text(

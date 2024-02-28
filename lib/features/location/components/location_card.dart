@@ -35,9 +35,7 @@ class _LocationCardState extends State<LocationCard> {
         height: 340,
         width: double.infinity,
         decoration: const BoxDecoration(
-          borderRadius: BorderRadius.all(
-            Radius.circular(40.0),
-          ),
+          borderRadius: BorderRadius.all(Radius.circular(40.0)),
         ),
         child: GoogleMap(
           myLocationButtonEnabled: false,
